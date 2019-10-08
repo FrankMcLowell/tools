@@ -1,61 +1,90 @@
 clear
 
-echo "Project Vault 7"
+echo "Project Vault7"
 echo "created by triple alliance"
-
-echo ""
 
 sleep 5
 
-clear
-
-echo "Project Vault 7"
+echo "Project Vault7"
 echo ""
 echo "Choose an option"
 echo "(1) Read the registers"
 echo "(2) Write on registers"
-echo "(3) Edit or create a protocol"
-echo "(4) Exit"
+echo "(3) Create or edit a protocol"
+echo "(4) Activate a protocol"
 echo ""
-echo "Your option: "; read option
+echo "Your option: " ; read option
 
 clear
 
-if [ $option -eq "1" ]
-	then
-		echo "Project Vault 7"
-		echo ""
-		echo "Choose an option"
-		echo "(1) Read Frank's register"
-		echo "(2) Read Superuser's register"
-		echo ""
-		echo "Your option: "; read option1
+# Reading the registers
 
-		clear
+if [ $option -eq "1" ] ; then
 
-		if [ $option1 -eq "1" ]
-			then
-				cat project-wesk3r/registry/reg.txt
-			fi
+	echo "Project Vault7"
+	echo ""
+	echo "Choose an option"
+	echo "(1) Read Frank's register"
+	echo "(2) Read Superuser's register"
+	echo ""
+	echo "Your option: " ; read option1
 
-		if [ $option1 -eq "2" ]
-			then
-				cat superuser/registry/reg.txt
-			fi
+	clear
 
-	fi
+	# Reading Frank's register
 
-if [ $option -eq "2" ]
-	then
+	if [ $option1 -eq "1" ] ; then
 		
-	fi
-
-if [ $option -eq "3" ]
-	then
+		cat project-wesk3r/registers/reg.v7p
 
 	fi
 
-if [ $option -eq "4" ]
-	then
-		break
+	# Reading Superuser's register
+
+	if [ $option1 -eq "2" ] ; then
+
+		cat superuser/registers/reg.v7p
+
 	fi
+
+fi
+
+# Writing on the registers
+
+if [ $option -eq "2" ] ; then
+
+	echo "Project Vault7"
+	echo ""
+	echo "Choose an option"
+	echo "(1) Write on Frank's register"
+	echo "(2) Write on Superuser's register"
+	echo ""
+	echo "Your option: " ; read option2
+
+	clear
+
+	if [ $option2 -eq "1" ] ; then
+
+		nano project-wesk3r/registers/reg.v7p
+
+	fi
+
+	if [ $option2 -eq "2" ] ; then
+
+		nano superuser/registers/reg.v7p
+
+	fi
+
+fi
+
+if [ $option -eq "3" ] ; then
+
+fi
+
+if [ $option -eq "4" ] ; then
+
+fi
+
+if [ $option -eq "dev" ] ; then
+
+fi
